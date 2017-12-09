@@ -11914,8 +11914,9 @@ a.anchor-link {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">Image</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;/Users/gutzmannjj/Work/AnacondaProjects/FAES_BIOF309_Exoplanets/Histogram_Chart_of_Discovered_Exoplanets_as_of_2017-11-26.png&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="o">%</span><span class="k">pwd</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">path</span><span class="o">+</span><span class="s1">&#39;/Histogram_Chart_of_Discovered_Exoplanets_as_of_2017-11-26.png&#39;</span><span class="p">)</span>
 <span class="c1"># data from Exoplanet.eu, via Wikipedia</span>
 </pre></div>
 
@@ -11983,7 +11984,7 @@ a.anchor-link {
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;/Users/gutzmannjj/Work/AnacondaProjects/FAES_BIOF309_Exoplanets/exoplanets_large_zoom.png&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">path</span><span class="o">+</span><span class="s1">&#39;/exoplanets_large_zoom.png&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14558,7 +14559,7 @@ and the final DataFrame has the following dimensions: 3526 discovered planets, w
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;/Users/gutzmannjj/Work/AnacondaProjects/FAES_BIOF309_Exoplanets/pairplot_downsized.jpg&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">path</span><span class="o">+</span><span class="s1">&#39;/pairplot_downsized.jpg&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14590,10 +14591,10 @@ and the final DataFrame has the following dimensions: 3526 discovered planets, w
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;/Users/gutzmannjj/Work/AnacondaProjects/FAES_BIOF309_Exoplanets/pairplot_annotated_downsized.jpg&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">path</span><span class="o">+</span><span class="s1">&#39;/pairplot_annotated_downsized.jpg&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14606,7 +14607,7 @@ and the final DataFrame has the following dimensions: 3526 discovered planets, w
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[18]:</div>
+<div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -14625,7 +14626,7 @@ and the final DataFrame has the following dimensions: 3526 discovered planets, w
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">DataFrame_features</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;features&#39;</span><span class="p">:[</span><span class="s1">&#39;pl_hostname&#39;</span><span class="p">,</span> <span class="s1">&#39;pl_letter&#39;</span><span class="p">,</span> <span class="s1">&#39;pl_discmethod&#39;</span><span class="p">,</span> <span class="s1">&#39;pl_pnum&#39;</span><span class="p">,</span> <span class="s1">&#39;pl_orbper&#39;</span><span class="p">,</span>
@@ -14686,13 +14687,13 @@ and the final DataFrame has the following dimensions: 3526 discovered planets, w
 
  
  
-<div id="44b25155-3dc7-4ab0-836c-90cadb84ab04"></div>
+<div id="2732c5fb-03b3-4a1e-bb21-5298fba54dca"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#44b25155-3dc7-4ab0-836c-90cadb84ab04');
+var element = $('#2732c5fb-03b3-4a1e-bb21-5298fba54dca');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "9e82ea03bfed46c7b983ecb149ccd581", "version_major": 2, "version_minor": 0}
+{"model_id": "9a752fa651ef482eaef1a960bbfac65e", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -14708,13 +14709,13 @@ var element = $('#44b25155-3dc7-4ab0-836c-90cadb84ab04');
 
  
  
-<div id="b6aee203-d704-4dbc-8c65-da8cc6127e26"></div>
+<div id="10bed7f9-0225-4fbb-87d7-bbe0dacbc0a4"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#b6aee203-d704-4dbc-8c65-da8cc6127e26');
+var element = $('#10bed7f9-0225-4fbb-87d7-bbe0dacbc0a4');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "9a145f42115f4a3d8c962c766ade01eb", "version_major": 2, "version_minor": 0}
+{"model_id": "e5aa57e37a3243f5ad565893f1005a0d", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -14730,13 +14731,13 @@ var element = $('#b6aee203-d704-4dbc-8c65-da8cc6127e26');
 
  
  
-<div id="009c8350-51ca-4f1b-b9ca-4b9652a1439b"></div>
+<div id="e23bc49b-28af-4133-9b73-899cc6f57bc0"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#009c8350-51ca-4f1b-b9ca-4b9652a1439b');
+var element = $('#e23bc49b-28af-4133-9b73-899cc6f57bc0');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "006c53e556b848a58e133117fa51842d", "version_major": 2, "version_minor": 0}
+{"model_id": "12522eb1fcfd406eaa8c6d36ed1e6795", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -16761,39 +16762,14 @@ QgguGsUQQgjB/R/NFqK79iA3CgAAAABJRU5ErkJggg==
 </div>
 </div>
 
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_incrementor</span> <span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">n</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="n">make_incrementor</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">make_incrementor</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
- 
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">42</span><span class="p">),</span> <span class="n">g</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">make_incrementor</span><span class="p">(</span><span class="mi">22</span><span class="p">)(</span><span class="mi">33</span><span class="p">))</span>
-</pre></div>
-
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-next?">What next?<a class="anchor-link" href="#What-next?">&#182;</a></h2><h3 id="Define-a-set-of-planetary-and-stellar-conditions-to-describe-a-habitable-planet-(e.g.-planet-orbital-period,-planet-mass,-stellar-optical-magnitude-etc...)">Define a set of planetary and stellar conditions to describe a habitable planet (e.g. planet orbital period, planet mass, stellar optical magnitude etc...)<a class="anchor-link" href="#Define-a-set-of-planetary-and-stellar-conditions-to-describe-a-habitable-planet-(e.g.-planet-orbital-period,-planet-mass,-stellar-optical-magnitude-etc...)">&#182;</a></h3><h3 id="use-machine-learning-to-predict-which-detection-method-is-most-likely-to-find-a-planet-fitting-these-conditions">use machine learning to predict which detection method is most likely to find a planet fitting these conditions<a class="anchor-link" href="#use-machine-learning-to-predict-which-detection-method-is-most-likely-to-find-a-planet-fitting-these-conditions">&#182;</a></h3>
 </div>
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># jupyter nbconvert planets.ipynb --to slides reveal-prefix=reveal.js</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div></section></section>
 </div>
 </div>
