@@ -12044,9 +12044,8 @@ a.anchor-link {
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="k">import</span> <span class="n">widgets</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="k">import</span> <span class="n">interact</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestClassifier</span>
 
-<span class="c1"># import sklearn as skl</span>
-<span class="c1"># import xgboost as xgb</span>
 <span class="c1"># import random</span>
 <span class="c1"># random.seed(12345)</span>
 </pre></div>
@@ -13812,6 +13811,7 @@ The final DataFrame has the following dimensions: 3564 discovered planets, with 
 
 <span class="c1">## add a feature column &quot;method_code&quot; to the DataFrame</span>
 <span class="n">planets</span><span class="p">[</span><span class="s1">&#39;method_code&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">method_code</span>
+<span class="n">planets</span><span class="p">[</span><span class="s1">&#39;pred_target&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">method_code</span>
 
 <span class="c1">## Creating a new DataFrame with the method code as the index column</span>
 <span class="n">planets</span> <span class="o">=</span> <span class="n">planets</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;method_code&#39;</span><span class="p">])</span>
@@ -13873,7 +13873,7 @@ The final DataFrame has the following dimensions: 3564 discovered planets, with 
 <span class="n">median_values</span> <span class="o">=</span> <span class="n">df10</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">df10</span> <span class="o">=</span> <span class="n">df10</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">median_values</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="c1">## putting all median-imputed DataFrames back together into one DataFrame</span>
+<span class="c1"># putting all median-imputed DataFrames back together into one DataFrame</span>
 <span class="n">frames</span> <span class="o">=</span> <span class="p">[</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">df3</span><span class="p">,</span> <span class="n">df4</span><span class="p">,</span> <span class="n">df5</span><span class="p">,</span> <span class="n">df6</span><span class="p">,</span> <span class="n">df7</span><span class="p">,</span> <span class="n">df8</span><span class="p">,</span> <span class="n">df9</span><span class="p">,</span> <span class="n">df10</span><span class="p">]</span>
 <span class="n">planets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">frames</span><span class="p">)</span>
 </pre></div>
@@ -14523,7 +14523,7 @@ QmCC
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 38 planets have been removed from the dataset, 
-and the final DataFrame has the following dimensions: 3526 discovered planets, with 38 recorded features
+and the final DataFrame has the following dimensions: 3526 discovered planets, with 39 recorded features
 </pre>
 </div>
 </div>
@@ -14591,7 +14591,7 @@ and the final DataFrame has the following dimensions: 3526 discovered planets, w
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">path</span><span class="o">+</span><span class="s1">&#39;/pairplot_annotated_downsized.jpg&#39;</span><span class="p">)</span>
@@ -14607,7 +14607,7 @@ and the final DataFrame has the following dimensions: 3526 discovered planets, w
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[19]:</div>
+<div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -14626,7 +14626,7 @@ and the final DataFrame has the following dimensions: 3526 discovered planets, w
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">DataFrame_features</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;features&#39;</span><span class="p">:[</span><span class="s1">&#39;pl_hostname&#39;</span><span class="p">,</span> <span class="s1">&#39;pl_letter&#39;</span><span class="p">,</span> <span class="s1">&#39;pl_discmethod&#39;</span><span class="p">,</span> <span class="s1">&#39;pl_pnum&#39;</span><span class="p">,</span> <span class="s1">&#39;pl_orbper&#39;</span><span class="p">,</span>
@@ -14687,13 +14687,13 @@ and the final DataFrame has the following dimensions: 3526 discovered planets, w
 
  
  
-<div id="2732c5fb-03b3-4a1e-bb21-5298fba54dca"></div>
+<div id="9db706b0-4521-4da5-95f9-ee9f5854ceec"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#2732c5fb-03b3-4a1e-bb21-5298fba54dca');
+var element = $('#9db706b0-4521-4da5-95f9-ee9f5854ceec');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "9a752fa651ef482eaef1a960bbfac65e", "version_major": 2, "version_minor": 0}
+{"model_id": "ffc43b28154649fb93c875365d87db9a", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -14709,13 +14709,13 @@ var element = $('#2732c5fb-03b3-4a1e-bb21-5298fba54dca');
 
  
  
-<div id="10bed7f9-0225-4fbb-87d7-bbe0dacbc0a4"></div>
+<div id="14313a8e-cd70-479d-933a-cf6663932e35"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#10bed7f9-0225-4fbb-87d7-bbe0dacbc0a4');
+var element = $('#14313a8e-cd70-479d-933a-cf6663932e35');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "e5aa57e37a3243f5ad565893f1005a0d", "version_major": 2, "version_minor": 0}
+{"model_id": "ce67ab9c74fe48e983d5e56782e92581", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -14731,13 +14731,13 @@ var element = $('#10bed7f9-0225-4fbb-87d7-bbe0dacbc0a4');
 
  
  
-<div id="e23bc49b-28af-4133-9b73-899cc6f57bc0"></div>
+<div id="d2d632d7-ab72-4732-971e-68e2f4b310a3"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#e23bc49b-28af-4133-9b73-899cc6f57bc0');
+var element = $('#d2d632d7-ab72-4732-971e-68e2f4b310a3');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "12522eb1fcfd406eaa8c6d36ed1e6795", "version_major": 2, "version_minor": 0}
+{"model_id": "8cf5b3a6a1d241c68308b3067e8d47f3", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -16767,9 +16767,69 @@ QgguGsUQQgjB/R/NFqK79iA3CgAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-next?">What next?<a class="anchor-link" href="#What-next?">&#182;</a></h2><h3 id="Define-a-set-of-planetary-and-stellar-conditions-to-describe-a-habitable-planet-(e.g.-planet-orbital-period,-planet-mass,-stellar-optical-magnitude-etc...)">Define a set of planetary and stellar conditions to describe a habitable planet (e.g. planet orbital period, planet mass, stellar optical magnitude etc...)<a class="anchor-link" href="#Define-a-set-of-planetary-and-stellar-conditions-to-describe-a-habitable-planet-(e.g.-planet-orbital-period,-planet-mass,-stellar-optical-magnitude-etc...)">&#182;</a></h3><h3 id="use-machine-learning-to-predict-which-detection-method-is-most-likely-to-find-a-planet-fitting-these-conditions">use machine learning to predict which detection method is most likely to find a planet fitting these conditions<a class="anchor-link" href="#use-machine-learning-to-predict-which-detection-method-is-most-likely-to-find-a-planet-fitting-these-conditions">&#182;</a></h3>
+<h1 id="Clonclusion:-The-analyzed-methods-for-exoplanet-detection-do-differ-in-the-types-of-exoplanets-that-can-be-discovered-with-them,-and-in-the-type-of-hoststar-where-planets-can-be-found.">Clonclusion: The analyzed methods for exoplanet detection do differ in the types of exoplanets that can be discovered with them, and in the type of hoststar where planets can be found.<a class="anchor-link" href="#Clonclusion:-The-analyzed-methods-for-exoplanet-detection-do-differ-in-the-types-of-exoplanets-that-can-be-discovered-with-them,-and-in-the-type-of-hoststar-where-planets-can-be-found.">&#182;</a></h1>
 </div>
 </div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2><h3 id="Define-a-set-of-planetary-and-stellar-conditions-to-describe-a-habitable-planet-(e.g.-planet-orbital-period,-planet-mass,-stellar-optical-magnitude-etc...)">Define a set of planetary and stellar conditions to describe a habitable planet (e.g. planet orbital period, planet mass, stellar optical magnitude etc...)<a class="anchor-link" href="#Define-a-set-of-planetary-and-stellar-conditions-to-describe-a-habitable-planet-(e.g.-planet-orbital-period,-planet-mass,-stellar-optical-magnitude-etc...)">&#182;</a></h3><h3 id="use-machine-learning-to-predict-which-detection-method-is-most-likely-to-find-a-planet-fitting-these-conditions">use machine learning to predict which detection method is most likely to find a planet fitting these conditions<a class="anchor-link" href="#use-machine-learning-to-predict-which-detection-method-is-most-likely-to-find-a-planet-fitting-these-conditions">&#182;</a></h3>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Selecting a random subset from the &#39;red_planets&#39; dataframe</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">red_planets</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="n">target</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;pred_target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">features_forest</span> <span class="o">=</span> <span class="n">train</span><span class="p">[[</span><span class="s1">&#39;dec&#39;</span><span class="p">,</span> <span class="s1">&#39;pl_orbper&#39;</span><span class="p">,</span> <span class="s1">&#39;st_dist&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># Building and fitting my_forest</span>
+<span class="n">forest</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">max_depth</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">min_samples_split</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_estimators</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">my_forest</span> <span class="o">=</span> <span class="n">forest</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features_forest</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+
+<span class="c1"># Print the score of the fitted random forest</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_forest</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">features_forest</span><span class="p">,</span> <span class="n">target</span><span class="p">))</span>
+
+<span class="c1"># Compute predictions on our test set features then print the length of the prediction vector</span>
+<span class="n">test_features</span> <span class="o">=</span> <span class="n">planets</span><span class="p">[[</span><span class="s1">&#39;dec&#39;</span><span class="p">,</span> <span class="s1">&#39;pl_orbper&#39;</span><span class="p">,</span> <span class="s1">&#39;st_dist&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">pred_forest</span> <span class="o">=</span> <span class="n">my_forest</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_features</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pred_forest</span><span class="p">))</span>
+
+<span class="c1">#Request and print the `.feature_importances_` attribute</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_forest</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1.0
+3564
+[ 0.2645063   0.38622078  0.34927292]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div></section></section>
 </div>
 </div>
