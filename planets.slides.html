@@ -13742,7 +13742,8 @@ The final DataFrame has the following dimensions: 3564 discovered planets, with 
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://upload.wikimedia.org/wikipedia/commons/3/3a/18_Del_b_rv.pdf&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Image(url = &#39;https://upload.wikimedia.org/wikipedia/commons/3/3a/18_Del_b_rv.pdf&#39;)</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://upload.wikimedia.org/wikipedia/commons/3/33/ESO_-_The_Radial_Velocity_Method_%28by%29.jpg&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13760,7 +13761,7 @@ The final DataFrame has the following dimensions: 3564 discovered planets, with 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/18_Del_b_rv.pdf"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/ESO_-_The_Radial_Velocity_Method_%28by%29.jpg"/>
 </div>
 
 </div>
@@ -14687,13 +14688,13 @@ and the final DataFrame has the following dimensions: 3526 discovered planets, w
 
  
  
-<div id="9db706b0-4521-4da5-95f9-ee9f5854ceec"></div>
+<div id="ab7e546d-a9a2-4d6d-b400-78908868e94e"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#9db706b0-4521-4da5-95f9-ee9f5854ceec');
+var element = $('#ab7e546d-a9a2-4d6d-b400-78908868e94e');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ffc43b28154649fb93c875365d87db9a", "version_major": 2, "version_minor": 0}
+{"model_id": "cedf5256387e47b59cce41c656583823", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -14709,13 +14710,13 @@ var element = $('#9db706b0-4521-4da5-95f9-ee9f5854ceec');
 
  
  
-<div id="14313a8e-cd70-479d-933a-cf6663932e35"></div>
+<div id="09774880-fdd6-4029-84df-3dabb860bd56"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#14313a8e-cd70-479d-933a-cf6663932e35');
+var element = $('#09774880-fdd6-4029-84df-3dabb860bd56');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ce67ab9c74fe48e983d5e56782e92581", "version_major": 2, "version_minor": 0}
+{"model_id": "5c8cffdc413f498b965476151ed5ec16", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -14731,13 +14732,13 @@ var element = $('#14313a8e-cd70-479d-933a-cf6663932e35');
 
  
  
-<div id="d2d632d7-ab72-4732-971e-68e2f4b310a3"></div>
+<div id="d9de7032-7948-47f2-96fb-cf3d32534db2"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#d2d632d7-ab72-4732-971e-68e2f4b310a3');
+var element = $('#d9de7032-7948-47f2-96fb-cf3d32534db2');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "8cf5b3a6a1d241c68308b3067e8d47f3", "version_major": 2, "version_minor": 0}
+{"model_id": "c9cac7ceb5e84fa4a3f1be71d8523d66", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -16781,7 +16782,7 @@ QgguGsUQQgjB/R/NFqK79iA3CgAAAABJRU5ErkJggg==
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Selecting a random subset from the &#39;red_planets&#39; dataframe</span>
@@ -16804,6 +16805,7 @@ QgguGsUQQgjB/R/NFqK79iA3CgAAAABJRU5ErkJggg==
 
 <span class="c1">#Request and print the `.feature_importances_` attribute</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_forest</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;declination&#39; - &#39;orbital period&#39; - &#39;distance&#39;&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -16822,7 +16824,8 @@ QgguGsUQQgjB/R/NFqK79iA3CgAAAABJRU5ErkJggg==
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>1.0
 3564
-[ 0.2645063   0.38622078  0.34927292]
+[ 0.26460786  0.31742883  0.41796331]
+&#39;declination&#39; - &#39;orbital period&#39; - &#39;distance&#39;
 </pre>
 </div>
 </div>
